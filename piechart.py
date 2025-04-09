@@ -1,3 +1,5 @@
+"""
+
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -15,5 +17,11 @@ ax.pie(x, colors=colors, radius=3, center=(4, 4),
 
 ax.set(xlim=(0, 8), xticks=np.arange(1, 8),
        ylim=(0, 8), yticks=np.arange(1, 8))
+"""
+import matplotlib.pyplot as plt
+import numpy as np
 
+t=np.arange(0.,5.,0.2)
+
+plt.plot(t,t,'r--',t**2,'bs',t**3,'g^')
 plt.show()
