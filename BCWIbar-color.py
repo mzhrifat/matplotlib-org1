@@ -3,6 +3,7 @@ import numpy as np
 from matplotlib.pyplot import bar_label, title
 
 fig,ax=plt.subplots()
+
 fruits=['apple','Dates','Cherry','malta']
 counts=[40,100,30,55,]
 bar_label=['red','blue','green','orange']
