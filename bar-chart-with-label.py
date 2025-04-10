@@ -1,16 +1,5 @@
 """
-import matplotlib.pyplot as plt
-import numpy as np
 
-animal_names = ['Lion', 'Gazelle', 'Cheetah']
-mph_speed = [50, 60, 75]
-
-fig, ax = plt.subplots()
-bar_container = ax.bar(animal_names, mph_speed)
-ax.set(ylabel='speed in MPH', title='Running speeds', ylim=(0, 80))
-ax.bar_label(bar_container, fmt=lambda x: f'{x * 1.61:.1f} km/h')
-
-plt.show()
 
 
 #bar chart with labels
@@ -65,7 +54,7 @@ ax.bar_label(hbars, fmt='%.2f')
 ax.set_xlim(right=15)  # adjust xlim to fit labels
 
 plt.show()
-"""
+
 #some advanced with bars
 import matplotlib.pyplot as plt
 import numpy as np
@@ -90,5 +79,41 @@ ax.set_title('How fast do you want to go today?')
 ax.bar_label(hbars, labels=[f'±{e:.2f}' for e in error],
              padding=8, color='b', fontsize=14)
 ax.set_xlim(right=16)
+
+plt.show()
+"""
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Fixing random state for reproducibility
+np.random.seed(19680801)
+
+# Example data
+people = ('Tom', 'Dick', 'Harry', 'Slim', 'Jim')
+y_pos = np.arange(len(people))
+performance = 3 + 10 * np.random.rand(len(people))
+error = np.random.rand(len(people))
+fig, ax = plt.subplots()
+
+fruit_names = ['Coffee', 'Salted Caramel', 'Pistachio']
+fruit_counts = [4000, 2000, 7000]
+
+fig, ax = plt.subplots()
+bar_container = ax.bar(fruit_names, fruit_counts)
+ax.set(ylabel='pints sold', title='Gelato sales by flavor', ylim=(0, 8000))
+ax.bar_label(bar_container, fmt='{:,.0f}')
+
+plt.show()
+####################
+import matplotlib.pyplot as plt
+import numpy as np
+
+animal_names = ['Lion', 'Gazelle', 'Cheetah']
+mph_speed = [50, 60, 75]
+
+fig, ax = plt.subplots()
+bar_container = ax.bar(animal_names, mph_speed)
+ax.set(ylabel='speed in MPH', title='Running speeds', ylim=(0, 80))
+ax.bar_label(bar_container, fmt=lambda x: f'{x * 1.61:.1f} km/h')
 
 plt.show()
