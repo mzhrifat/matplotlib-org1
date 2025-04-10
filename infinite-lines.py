@@ -23,4 +23,5 @@ ax.legend(fontsize=14)
 plt.title("Data")
 plt.xlabel("Time")
 plt.ylabel("Some")
+
 plt.show()
