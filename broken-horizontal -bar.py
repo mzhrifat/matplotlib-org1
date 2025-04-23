@@ -8,7 +8,8 @@ cpu_2=np.column_stack([np.linspace(0,9,10),np.full(10,0.5)])
 cpu_3=np.column_stack([10*np.random.random(61),np.full(61,0.05)])
 cpu_4=[(2,1.7),(7,1.2)]
 disk=[(1,1.5)]
-network= np.column_stack([10*np.random(10),np.full(10,0.005)])
+
+network = np.column_stack([10*np.random.random(10), np.full(10, 0.05)])
 
 fig,ax =plt.subplots()
 #broken_barh(xranges,(ymin,height))
@@ -25,3 +26,6 @@ ax.set_yticks(range(6),
               labels=["CPU 1", "CPU 2", "CPU 3", "CPU 4", "disk", "network"])
 ax.invert_yaxis()
 ax.set_title("Resource usage")
+
+
+plt.show()
