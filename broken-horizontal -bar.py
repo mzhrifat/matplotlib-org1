@@ -9,3 +9,12 @@ cpu_3=np.column_stack([10*np.random.random(61),np.full(61,0.05)])
 cpu_4=[(2,1.7),(7,1.2)]
 disk=[(1,1.5)]
 network= np.column_stack([10*np.random(10),np.full(10,0.005)])
+
+fig,ax =plt.subplots()
+#broken_barh(xranges,(ymin,height))
+
+ax.broken_barh(cpu_1,(-0.2,0.4))
+ax.broken_barh(cpu_2,(0.8,0.4))
+ax.broken_barh(cpu_3,(1.8,0.4))
+ax.broken_barh(cpu_4,(2.8,0.4))
+
