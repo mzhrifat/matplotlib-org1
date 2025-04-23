@@ -18,3 +18,10 @@ ax.broken_barh(cpu_2,(0.8,0.4))
 ax.broken_barh(cpu_3,(1.8,0.4))
 ax.broken_barh(cpu_4,(2.8,0.4))
 
+ax.broken_barh(disk, (3.8, 0.4), color="tab:orange")
+ax.broken_barh(network, (4.8, 0.4), color="tab:green")
+ax.set_xlim(0, 10)
+ax.set_yticks(range(6),
+              labels=["CPU 1", "CPU 2", "CPU 3", "CPU 4", "disk", "network"])
+ax.invert_yaxis()
+ax.set_title("Resource usage")
