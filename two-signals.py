@@ -9,6 +9,9 @@ t=np.arange(0,30,dt)
 nse1=np.random.randn(len(t))
 nse2=np.random.randn(len(t))
 
+#TWO signals with a coherent part at 10 HZ and a random part
+s1 = np.sin(2 * np.pi * 10 * t) + nse1
+s2 = np.sin(2 * np.pi * 10 * t) + nse2
 
 fig,axs=plt.subplots(2,1,layout='constrained')
 axs[0].plot(t,s1,t,s2)
