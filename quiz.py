@@ -1,19 +1,20 @@
-"""
-t=int(input())
+
+t = int(input())
 for _ in range(t):
-n,c,q=map(int,input().split())
-s=input
-for _ in range(c):
-l,r=map(int,input().split())
-s+ = s[l-1 : r]
+    n, c, q = map(int, input().split())
+    s = input()
 
-for _ in range(q):
-k=int(input())
+    for _ in range(c):
+        l, r = map(int, input().split())
+        s += s[l-1:r]
 
-print (S[k-1])
-"""
+    for _ in range(q):
+        k = int(input())
+        print(s[k-1])
+
+
 """connecting a nation"""
-
+"""
 def find(parent, x):
     if parent[x] != x:
         parent[x] = find(parent, parent[x])
@@ -37,3 +38,4 @@ for i in range(1, n + 1):
     components.add(find(parent, i))
 
 print(len(components) - 1)
+"""
