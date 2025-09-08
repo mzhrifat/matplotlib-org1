@@ -1,21 +1,3 @@
-"""
-import matplotlib.pyplot as plt
-
-import matplotlib.cbook as cbook
-import matplotlib.patches as patches
-
-with cbook.get_sample_data('grace_hopper.jpg') as image_file:
-    image = plt.imread(image_file)
-
-fig, ax = plt.subplots()
-im = ax.imshow(image)
-patch = patches.Circle((260, 200), radius=200, transform=ax.transData)
-im.set_clip_path(patch)
-
-ax.axis('off')
-plt.show()
-"""
-import matplotlib.pyplot as plt
 from PIL import Image, ImageOps, ImageDraw
 
 # ছবির পাথ
@@ -29,8 +11,8 @@ mask = Image.new("L", img.size, 0)
 
 # মাস্কে বৃত্ত আঁকা
 draw = ImageDraw.Draw(mask)
-size = min(img.size)  # ছোট সাইজ অনুযায়ী বৃত্তের ব্যাস
-center = (img.size[0] // 2, img.size[1] // 2)  # ছবির মাঝখান
+size = min(img.size)
+center = (img.size[0] // 2, img.size[1] // 2)
 draw.ellipse(
     (center[0] - size//2, center[1] - size//2,
      center[0] + size//2, center[1] + size//2),
@@ -40,7 +22,12 @@ draw.ellipse(
 # ছবিতে মাস্ক লাগানো
 rounded_img = ImageOps.fit(img, mask.size, centering=(0.5, 0.5))
 rounded_img.putalpha(mask)
-plt.show()
-# আউটপুট PNG সেভ করা
-# rounded_img.save("rounded_profile.png")
 
+# সবুজ ব্যাকগ্রাউন্ড তৈরি
+green_bg = Image.new("RGBA", img.size, (0, 255, 0, 255))  # সবুজ রঙ
+
+# ব্যাকগ্রাউন্ডে ছবি পেস্ট করা
+green_bg.paste(rounded_img, (0, 0), rounded_img)
+
+# আউটপুট সেভ করা
+green_bg.save("rounded_profile_green.png")
