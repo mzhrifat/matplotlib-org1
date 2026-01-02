@@ -31,3 +31,4 @@ green_bg.paste(rounded_img, (0, 0), rounded_img)
 
 # আউটপুট সেভ করা
 green_bg.save("rounded_profile_green.png")
+plt.show()
