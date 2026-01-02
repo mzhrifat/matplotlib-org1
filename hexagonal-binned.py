@@ -22,4 +22,4 @@ ax1.set(xlim=xlim, ylim=ylim)
 ax1.set_title("With a log color scale")
 cb = fig.colorbar(hb, ax=ax1, label='counts')
 plt.savefig('hexagonal-binned.png')
-plt.show()
+
